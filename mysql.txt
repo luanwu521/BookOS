@@ -1,0 +1,53 @@
+CREATE TABLE bookOS_user(
+   id INT UNSIGNED AUTO_INCREMENT,
+   user_id varchar(30) not null,
+   user_password varchar(30) not null,
+   user_type int,
+   PRIMARY KEY (id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+insert into bookos_user (user_id, user_password, user_type) 
+values 
+("test3", "123456", 1);
+
+select * from bookos_user where user_id="admin";
+
+insert into bookos_user (user_id, user_password, user_type)
+values
+("test4", "123456", 1);
+
+CREATE TABLE bookOS_book(
+   id INT UNSIGNED AUTO_INCREMENT,
+   book_id varchar(30) not null,
+   book_name varchar(30) not null,
+   book_author varchar(30) not null,
+   book_count INT UNSIGNED not null,
+   PRIMARY KEY (id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+insert into bookos_book (book_id, book_name, book_author, book_count)
+values
+("1638752093", "test1", "ovo", 3);
+
+insert into bookos_book (book_id, book_name, book_author, book_count)
+values
+("10003", "test_book", "ovo", 3);
+
+delete from bookos_book where book_id = '1638752093';
+
+insert into bookos_book (book_id, book_name, book_author, book_count)
+values
+();
+
+select book_count from bookos_book where book_id = "10000";
+
+CREATE TABLE bookOS_borrow(
+   id INT UNSIGNED AUTO_INCREMENT,
+   book_id varchar(30) not null,
+   book_owner varchar(30) not null,
+   PRIMARY KEY (id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+insert into bookos_borrow (book_id, book_owner) values ("10000", "test1");
+
+update bookos_book set book_count=6 where book_id = "10000";
