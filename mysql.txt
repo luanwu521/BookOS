@@ -6,15 +6,6 @@ CREATE TABLE bookOS_user(
    PRIMARY KEY (id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-insert into bookos_user (user_id, user_password, user_type) 
-values 
-("test3", "123456", 1);
-
-select * from bookos_user where user_id="admin";
-
-insert into bookos_user (user_id, user_password, user_type)
-values
-("test4", "123456", 1);
 
 CREATE TABLE bookOS_book(
    id INT UNSIGNED AUTO_INCREMENT,
@@ -25,21 +16,6 @@ CREATE TABLE bookOS_book(
    PRIMARY KEY (id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-insert into bookos_book (book_id, book_name, book_author, book_count)
-values
-("1638752093", "test1", "ovo", 3);
-
-insert into bookos_book (book_id, book_name, book_author, book_count)
-values
-("10003", "test_book", "ovo", 3);
-
-delete from bookos_book where book_id = '1638752093';
-
-insert into bookos_book (book_id, book_name, book_author, book_count)
-values
-();
-
-select book_count from bookos_book where book_id = "10000";
 
 CREATE TABLE bookOS_borrow(
    id INT UNSIGNED AUTO_INCREMENT,
@@ -48,6 +24,3 @@ CREATE TABLE bookOS_borrow(
    PRIMARY KEY (id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-insert into bookos_borrow (book_id, book_owner) values ("10000", "test1");
-
-update bookos_book set book_count=6 where book_id = "10000";
